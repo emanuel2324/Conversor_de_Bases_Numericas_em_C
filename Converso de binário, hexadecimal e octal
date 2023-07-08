@@ -1,0 +1,147 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int final;
+    char binario[100];
+    int a;
+    int numero_inicial;
+
+    printf("Escolha sua opcao de conversao:\n");
+    printf("1. BINARIO\n");
+    printf("2. OCTAL\n");
+    printf("3. DECIMAL\n");
+    printf("4. HEXA\n");
+    printf("Opcao: ");
+    scanf("%d", &a);
+
+    switch (a) {
+        case 1:
+            printf("Digite um valor binario: ");
+            scanf("%s", binario);
+
+            printf("Escolha uma opção:\n");
+            printf("1. Converter para octal\n");
+            printf("2. Converter para decimal\n");
+            printf("3. Converter para hexadecimal\n");
+            printf("Opcao: ");
+            scanf("%d", & final);
+
+            if (final == 1) {
+                int binario_octal = strtol(binario, NULL, 2);
+                printf("\nBinario %s convertido : %o\n", binario, binario_octal);
+            } else if (final == 2) {
+                int binario_decimal = strtol(binario, NULL, 2);
+                printf("\nBinario %s convertido : %d\n", binario, binario_decimal);
+            } else if (final == 3) {
+                int binario_hexadecimal = strtol(binario, NULL, 2);
+                printf("\nBinario %s convertido : %X\n", binario, binario_hexadecimal);
+            } else {
+                printf("\nNULA.\n");
+            }
+            break;
+
+        case 2:
+            printf("Digite o valor octal: ");
+            scanf("%o", &numero_inicial);
+
+            printf("\n base final:\n");
+            printf("1. Binária\n");
+            printf("2. Decimal\n");
+            printf("3. Hexadecimal\n");
+            printf("Opcao: ");
+            scanf("%d", &final);
+
+            if (final == 1) {
+                itoa(numero_inicial, binario, 2);
+                printf("O %o convertido : %s\n", numero_inicial, binario);
+            } else if (final == 2) {
+                printf("\nOctal %o convertido : %d\n", numero_inicial, numero_inicial);
+            } else if (final == 3) {
+                printf("\nOctal %o convertido : %X\n", numero_inicial, numero_inicial);
+            } else {
+                printf("\nNULO\n");
+            }
+            break;
+            
+            case 3:
+            printf("Digite o valor decimal: ");
+		scanf("%i", & numero_inicial);
+		
+		printf("\nSelecione a base final:\n");
+		printf("1. Binaria.\n");
+		printf("2. Octal.\n");
+		printf("3. Hexadecimal.\n\n");
+		printf("Escolha: ");
+		scanf("%d", &final);
+		
+		if(final == 1){
+			
+		ltoa(numero_inicial, binario, 2);
+		printf("Decimal %i convertido: %s\n", numero_inicial, binario);	
+		
+		}else
+			if(final == 2){
+				
+				printf("\nDecimal %i convertido : %o\n",numero_inicial, numero_inicial);
+				
+			}else
+				if(final == 3){
+				
+					printf("\nDecimal %i convertido : %X\n",numero_inicial,numero_inicial);
+					
+				}else{
+					
+					printf("\nNULA");
+					
+				}
+		
+		break;
+		
+		case (4):
+			
+		printf("Digite o valor hexadecimal: ");
+		scanf("%X", &numero_inicial);
+		
+		printf("\nSelecione a base final:\n");
+		printf("1. Binaria.\n");
+		printf("2.Octal.\n");
+		printf("3. Decimal.\n\n");
+		printf("Escolha: ");
+		scanf("%i", &final);
+		
+		if(final == 1){
+			
+		ltoa(numero_inicial, binario, 2);
+		printf("Hexadecimal %X convertido : %s\n", numero_inicial, binario);
+		
+		}else
+			if(final == 2){
+				
+				printf("\nHexadecimal %X convertido : %o\n",numero_inicial, numero_inicial);
+				
+			}else
+				if(final == 3){
+				
+					printf("\nHexadecimal %X convertido : %i\n",numero_inicial, numero_inicial);
+					
+				}else{
+					
+					printf("\nNULA");
+					
+				}
+		
+		break;
+
+		default:
+		printf("Operacao invalida.");
+		break;
+}
+
+	system("pause");
+	return 0;
+}
+    
+
+
+
